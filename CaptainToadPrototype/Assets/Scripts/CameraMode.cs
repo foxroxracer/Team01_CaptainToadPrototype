@@ -55,7 +55,7 @@ public class CameraMode : MonoBehaviour {
             float fraction = (elapsedTime / CameraTransitionTimeInSeconds);
 
             float transitionFraction = CameraTransitionCurve.Evaluate(fraction);
-            _cameraPivotPoint.position = Vector3.Lerp(startPositionPivotPoint, endPositionPivotPoint, transitionFraction);
+            _cameraPivotPoint.position = Vector3.Lerp(startPositionPivotPoint, GetStartingCameraPivotPoint(), transitionFraction);
             _mainCameraTransform.localPosition = Vector3.Lerp(startCameraPosition, endCameraPosition, transitionFraction);
             _mainCamera.fieldOfView = Mathf.Lerp(startCamereFOV, endCameraFOV, transitionFraction);
 

@@ -27,11 +27,12 @@ public class GiveFocusToGameObjectOnEnable : MonoBehaviour {
     private void HighLightGameObject() {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ObjectToGiveFocus);
-        //ObjectToGiveFocus.GetComponent<Button>().Select();
     }
 
     private void HighLightPreviousGameObject() {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(_originalGameObject);
+        if (EventSystem.current != null) {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(_originalGameObject);
+        }
     }
 }
