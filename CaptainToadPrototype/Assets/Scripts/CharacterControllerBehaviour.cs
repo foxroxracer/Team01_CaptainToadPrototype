@@ -51,7 +51,10 @@ public class CharacterControllerBehaviour : MonoBehaviour {
 
     private void FixedUpdate()
     {
-
+        if (ClimbingLadder == false)
+        {
+            WalkDownSlope();
+        }
         ApplyGravity();
 
 
@@ -68,6 +71,17 @@ public class CharacterControllerBehaviour : MonoBehaviour {
         _charCTRL.SimpleMove(_downWardsForce);
         }
 
+    }
+
+    private void WalkDownSlope()
+    {
+        float snapDistance = 0.5f;
+        if (_charCTRL.isGrounded == false)
+        {
+            RaycastHit hitInfo = new RaycastHit();
+            if (Physics.Raycast(new Ray(transform.position, Vector3.down), out hitInfo, snapDistance))
+                _charCTRL.Move(hitInfo.point - transform.position);
+        }
     }
 
     private void ApplyGravity()
