@@ -30,6 +30,7 @@ public class CameraController : MonoBehaviour {
     private Transform _cameraVerticalRotationPivotPoint;
     private Transform _mainCharacter;
     private bool _isLeftTriggerHeldDown = false;
+    private bool _isPaused = false;
 
     void Awake() {
         _cameraPivotPoint = this.transform.Find("CameraPivot");
@@ -37,16 +38,36 @@ public class CameraController : MonoBehaviour {
         _mainCharacter = GameObject.Find("MainCharacter").transform;
     }
 
+    void OnEnable() {
+        PauseManager.OnGameContinue += ContinueCameraController;
+        PauseManager.OnGamePause += PauseCameraController;
+    }
+
+    void OnDisable() {
+        PauseManager.OnGameContinue -= ContinueCameraController;
+        PauseManager.OnGamePause -= PauseCameraController;
+    }
+
+    private void PauseCameraController() {
+        _isPaused = true;
+    }
+
+    private void ContinueCameraController() {
+        _isPaused = false;
+    }
+
     void Update() {
-        RotateCameraHorizontally();
-        RotateCameraVertically();
+        if (!_isPaused) {
+            RotateCameraHorizontally();
+            RotateCameraVertically();
 
-        if (Input.GetButtonDown("CameraSwitch")) {
-            SwitchCameraMode();
-        }
+            if (Input.GetButtonDown("CameraSwitch")) {
+                SwitchCameraMode();
+            }
 
-        if (Input.GetButtonDown("CameraRecenter")) {
-            RecenterCamera();
+            if (Input.GetButtonDown("CameraRecenter")) {
+                RecenterCamera();
+            }
         }
     }
 

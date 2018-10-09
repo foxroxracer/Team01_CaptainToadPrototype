@@ -25,11 +25,13 @@ public class ExitScreenController : MonoBehaviour {
     }
 
     private void ShowExitScreen() {
+        PauseManager.PauseGame();
         ExitScreen.SetActive(true);
         _exitScreenIsVisible = true;
     }
 
     private void HideExitScreen() {
+        PauseManager.ContinueGame();
         ExitScreen.SetActive(false);
         _exitScreenIsVisible = false;
     }
