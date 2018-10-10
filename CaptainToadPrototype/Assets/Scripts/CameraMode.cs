@@ -19,6 +19,7 @@ public class CameraMode : MonoBehaviour {
     protected Vector3 _cameraMovingVelocity = Vector3.zero;
     private Transform _mainCameraTransform;
     private Camera _mainCamera;
+    private bool _isTransitioningToOtherCameraMode = false;
 
     void Awake() {
         _mainCharacter = GameObject.Find("MainCharacter").transform;
@@ -35,8 +36,10 @@ public class CameraMode : MonoBehaviour {
         StopAllCoroutines();    
     }
 
-    void Update() {
-        MovePivotPoint();
+    void LateUpdate() {
+        if (!_isTransitioningToOtherCameraMode) {
+            MovePivotPoint();
+        }
     }
 
     private IEnumerator TransitionToNewCameraMode() {
@@ -50,6 +53,7 @@ public class CameraMode : MonoBehaviour {
         float endCameraFOV = CameraFOV;
         
         float elapsedTime = 0f;
+        _isTransitioningToOtherCameraMode = true;
 
         while (elapsedTime < CameraTransitionTimeInSeconds) {
             float fraction = (elapsedTime / CameraTransitionTimeInSeconds);
@@ -62,6 +66,8 @@ public class CameraMode : MonoBehaviour {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        _isTransitioningToOtherCameraMode = false;
     }
 
     public virtual Vector3 GetStartingCameraPivotPoint() {

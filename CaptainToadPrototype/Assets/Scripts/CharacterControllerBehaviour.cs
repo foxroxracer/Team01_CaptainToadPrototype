@@ -57,30 +57,25 @@ public class CharacterControllerBehaviour : MonoBehaviour {
             MovementCalculation();
             Sprinting();
             ClimbLadder();
-        }
 
-        //Debug.Log(_charCTRL.isGrounded);
-    }
-
-    private void FixedUpdate()
-    {
-        if (!_isPaused) {
             if (ClimbingLadder == false) {
                 WalkDownSlope();
             }
-            ApplyGravity();
 
-
-            //Allow player to move in the X and Z direction
-            //Stop player from moving when falling down platform
+            /*
             if (_downWardsForce.y >= -1.5f) {
                 _charCTRL.Move(_moveDirection * _moveSpeed * _inputAmount);
-            }
+            }*/
 
-            //Downwards Gravity
             if (CanFall == true) {
                 _charCTRL.SimpleMove(_downWardsForce);
             }
+
+            ApplyGravity();
+
+            Vector3 finalMovement = _moveDirection + _downWardsForce;
+
+            _charCTRL.Move(finalMovement * _moveSpeed * Time.deltaTime);
         }
     }
 

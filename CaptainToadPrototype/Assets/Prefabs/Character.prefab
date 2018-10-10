@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114383002280023980}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Toad
+  m_TagString: MainCharacter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,8 +69,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600339779349362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4330559809656002}
   m_Father: {fileID: 4775519316689450}
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969004192032880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.96, y: 1, z: 1.66}
+  m_LocalPosition: {x: -8.061, y: 1.5, z: 3.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4298894501947652}
@@ -202,10 +202,10 @@ MonoBehaviour:
   ClimbingLadder: 0
   LeavingLadder: 0
   CameraTransform: {fileID: 0}
-  CurrentObjectTransform: {fileID: 0}
+  CurrentObjectTransform: {fileID: 4775519316689450}
   _rotationSpeed: 25
-  _baseMoveSpeed: 0.075
-  _maxMoveSpeed: 0.125
+  _baseMoveSpeed: 4
+  _maxMoveSpeed: 6
 --- !u!143 &143866323597276280
 CharacterController:
   m_ObjectHideFlags: 1
@@ -216,10 +216,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_Height: 1
+  m_Radius: 0.25
+  m_SlopeLimit: 90
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_SkinWidth: 0.05
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0.5, z: 0}

@@ -2313,11 +2313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
---- !u!4 &336434037 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4775519316689450, guid: f76510dab50321a4a8a86c08204e11ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1129107512}
 --- !u!1 &342102051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5973,43 +5968,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1969004192032880, guid: f76510dab50321a4a8a86c08204e11ac, type: 2}
-      propertyPath: m_Name
-      value: MainCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 114383002280023980, guid: f76510dab50321a4a8a86c08204e11ac,
-        type: 2}
-      propertyPath: CameraForward
-      value: 
-      objectReference: {fileID: 1859195062}
     - target: {fileID: 114383002280023980, guid: f76510dab50321a4a8a86c08204e11ac,
         type: 2}
       propertyPath: CameraTransform
       value: 
       objectReference: {fileID: 1859195062}
-    - target: {fileID: 114383002280023980, guid: f76510dab50321a4a8a86c08204e11ac,
-        type: 2}
-      propertyPath: CurrentObjectTransform
-      value: 
-      objectReference: {fileID: 336434037}
-    - target: {fileID: 4298894501947652, guid: f76510dab50321a4a8a86c08204e11ac, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775519316689450, guid: f76510dab50321a4a8a86c08204e11ac, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775519316689450, guid: f76510dab50321a4a8a86c08204e11ac, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775519316689450, guid: f76510dab50321a4a8a86c08204e11ac, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1969004192032880, guid: f76510dab50321a4a8a86c08204e11ac, type: 2}
-      propertyPath: m_TagString
+      propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
     m_RemovedComponents: []

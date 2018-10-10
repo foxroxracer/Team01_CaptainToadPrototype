@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour {
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "MainCharacter") {
             other.gameObject.transform.parent = null;
-            other.gameObject.transform.localScale = Vector3.one * 0.5f;
+            other.gameObject.transform.localScale = Vector3.one;
             PressAButtonCanvas.SetActive(false);
         }
     }
