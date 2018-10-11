@@ -7,12 +7,13 @@ public class CharacterControllerBehaviour : MonoBehaviour {
     public bool ClimbingLadder = false;
     public bool LeavingLadder = false;
 
+    public bool CanMove = true;
     public Transform CameraTransform;
 
     public Transform CurrentObjectTransform;
 
 
-    private CharacterController _charCTRL;
+    public CharacterController _charCTRL;
 
 
     private float _verticalInput;
@@ -62,10 +63,6 @@ public class CharacterControllerBehaviour : MonoBehaviour {
                 WalkDownSlope();
             }
 
-            /*
-            if (_downWardsForce.y >= -1.5f) {
-                _charCTRL.Move(_moveDirection * _moveSpeed * _inputAmount);
-            }*/
 
             if (CanFall == true) {
                 _charCTRL.SimpleMove(_downWardsForce);
@@ -74,8 +71,10 @@ public class CharacterControllerBehaviour : MonoBehaviour {
             ApplyGravity();
 
             Vector3 finalMovement = _moveDirection + _downWardsForce;
-
+            if (CanMove == true)
+            {
             _charCTRL.Move(finalMovement * _moveSpeed * Time.deltaTime);
+            }
         }
     }
 
