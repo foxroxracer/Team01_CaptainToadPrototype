@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [System.Serializable]
 public class SmallZoomCameraMode : CameraMode {
     public Transform CameraDollyRightPoint;
     public Transform CameraDollyLeftPoint;
+
+#if DEBUG
+    void Start() {
+        Assert.IsNotNull(CameraDollyRightPoint, "No dolly track found, please put the SmallZoomCameraDollyTrack (inside prefabs) in the scene and assign it.");
+        Assert.IsNotNull(CameraDollyLeftPoint, "No dolly track found, please put the SmallZoomCameraDollyTrack (inside prefabs) in the scene and assign it.");
+    }
+#endif
 
     public override void MovePivotPoint() {
         Vector3 newPivotPointPosition = GetCameraPivotPointOnCameraDolly();
