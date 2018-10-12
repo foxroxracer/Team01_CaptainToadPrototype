@@ -6,6 +6,8 @@ public class MovingPlatformTrigger : MonoBehaviour {
 
     public Mechanic_MovingPlatform MovingPlatformMechanic;
     private bool _mainCharacterOnPlatform = false;
+    public GameObject TextBubbleInstructions;
+    public bool TriggerIsOnPlatform = true;
 
     void Update() {
         if (_mainCharacterOnPlatform && AButtonPressed()) {
@@ -15,14 +17,20 @@ public class MovingPlatformTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "MainCharacter") {
-            PutMainCharacterOnPlatform(other.gameObject.transform);
+            TextBubbleInstructions.SetActive(true);
+            if (TriggerIsOnPlatform) {
+                PutMainCharacterOnPlatform(other.gameObject.transform);
+            }
             _mainCharacterOnPlatform = true;
         }        
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "MainCharacter") {
-            RemoveMainCharacterFromPlatform(other.gameObject.transform);
+            TextBubbleInstructions.SetActive(false);
+            if (TriggerIsOnPlatform) {
+                RemoveMainCharacterFromPlatform(other.gameObject.transform);
+            }
             _mainCharacterOnPlatform = false;
         }
     }
