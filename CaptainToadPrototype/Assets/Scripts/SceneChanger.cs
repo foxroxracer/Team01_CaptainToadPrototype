@@ -14,15 +14,18 @@ public class SceneChanger : MonoBehaviour {
     }
 
     public void GoToLevelOne() {
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level_1");
+        LevelManager.SetCurrentLevel(1);
     }
 
     public void GoToLevelTwo() {
-        SceneManager.LoadScene("Level_02");
+        SceneManager.LoadScene("Level_2");
+        LevelManager.SetCurrentLevel(2);
     }
 
     public void GoToLevelThree() {
-        SceneManager.LoadScene("Level_03");
+        SceneManager.LoadScene("Level_3");
+        LevelManager.SetCurrentLevel(3);
     }
 
     public void GoToTestLevel() {
@@ -31,5 +34,19 @@ public class SceneChanger : MonoBehaviour {
 
     public void GoToEndScreen() {
         SceneManager.LoadScene("EndScreen");
+    }
+
+    public void GoToLevel(int level) {
+        switch (level) {
+            case 1:
+                GoToLevelOne();
+                break;
+            case 2:
+                GoToLevelTwo();
+                break;
+            case 3:
+                GoToLevelThree();
+                break;
+        }
     }
 }
