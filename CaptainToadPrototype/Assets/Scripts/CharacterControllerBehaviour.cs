@@ -57,16 +57,14 @@ public class CharacterControllerBehaviour : MonoBehaviour {
         if (!_isPaused) {
             MovementCalculation();
             Sprinting();
-            ClimbLadder();
 
-            if (ClimbingLadder == false) {
+
+            if (CanFall == true && ClimbingLadder == false)
+            {
                 WalkDownSlope();
-            }
-
-
-            if (CanFall == true) {
                 _charCTRL.SimpleMove(_downWardsForce);
             }
+          
 
             ApplyGravity();
 
@@ -154,42 +152,7 @@ public class CharacterControllerBehaviour : MonoBehaviour {
             _moveSpeed = Mathf.Lerp(_moveSpeed, _baseMoveSpeed, Time.deltaTime*3);
         }
     }
-
-    public void ClimbLadder()
-    {
-        if(ClimbingLadder == true)
-        {
-            //Change toad forward to face the ladder when getting on (Change the Y of the forward
-            this.gameObject.transform.forward = Vector3.Lerp(this.gameObject.transform.forward, CurrentObjectTransform.forward * -1,Time.deltaTime*4);
-            //Stop toad from falling down when downwards force gets too big
-            CanFall = false;
-
-
-            //Add an upwards force that toad will be using to climb the ladder, this move will only look at the vertical input to climb
-            //Because the downwards force is increasing while toad is climbing the ladder, toad won't be able to move left/right/forwards/backwards
-            _charCTRL.Move(Vector3.up * _verticalInput*Time.deltaTime*2.5f);
-
-            if (LeavingLadder == true)
-            {
-                //When leaving the ladder, toad will get pushed forward to land on the ground
-                //Push Toad forward according to his forward
-                _charCTRL.Move(this.gameObject.transform.forward * _moveSpeed * Time.deltaTime*20);
-
-                //Make sure Toad can fall again
-                CanFall = true;
-
-                //When toad is grounded, ladder climbing sequence will be completed
-                if (_charCTRL.isGrounded)
-                {
-                    ClimbingLadder = false;
-                    LeavingLadder = false;
-                }
-            }
-
-        }
-
-
-    }
+   
 
     private void PauseCharacterController() {
         _isPaused = true;
