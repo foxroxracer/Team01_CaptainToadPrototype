@@ -51,8 +51,7 @@ public class Mechanic_SpikeTrap : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "MainCharacter") {
-            //TODO KILL MAINCHARACTER
-            Debug.LogWarning("Player has been killed");
+            other.gameObject.GetComponent<MainCharacterDeath>().KillMainCharacter();
         }    
     }
 }

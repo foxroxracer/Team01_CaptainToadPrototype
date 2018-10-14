@@ -19,4 +19,8 @@ public class LevelManager : MonoBehaviour {
             GameObject.Find("SceneChanger").GetComponent<SceneChanger>().GoToLevel(currentLevel);
         }
     }
+
+    public static void RestartCurrentLevel() {
+        GameObject.Find("SceneChanger").GetComponent<SceneChanger>().GoToLevel(currentLevel);
+    }
 }

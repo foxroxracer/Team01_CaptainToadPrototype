@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4775519316689450}
   - component: {fileID: 143866323597276280}
   - component: {fileID: 114383002280023980}
+  - component: {fileID: 114746095156790018}
   m_Layer: 0
   m_Name: Character
   m_TagString: MainCharacter
@@ -96,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969004192032880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.061, y: 1.5, z: 3.57}
+  m_LocalPosition: {x: -9.05, y: 0.69, z: 8.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4298894501947652}
@@ -201,11 +202,26 @@ MonoBehaviour:
   CanFall: 1
   ClimbingLadder: 0
   LeavingLadder: 0
+  CanMove: 1
   CameraTransform: {fileID: 0}
   CurrentObjectTransform: {fileID: 4775519316689450}
+  _charCTRL: {fileID: 0}
   _rotationSpeed: 25
   _baseMoveSpeed: 4
   _maxMoveSpeed: 6
+--- !u!114 &114746095156790018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969004192032880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f2eb5eec5b6c44996adb3382d57c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCharacterDeathFX: {fileID: 1388942187353214, guid: f1027fb667ff35f4e8f71193e4f74832,
+    type: 2}
 --- !u!143 &143866323597276280
 CharacterController:
   m_ObjectHideFlags: 1
