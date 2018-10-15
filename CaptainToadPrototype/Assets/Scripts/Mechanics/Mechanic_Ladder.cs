@@ -86,9 +86,13 @@ public class Mechanic_Ladder : MonoBehaviour {
     {
         //If toad leaves ladder set bool to true
         //Check in which way toad is leaving the ladder
-        if(_toad.transform.position.y > _ladderLeavePos.position.y && _topToBottom ==false)
+        if (other.gameObject.tag == "MainCharacter")
         {
-        _leavingLadder = true;
+
+            if (_toad.transform.position.y > _ladderLeavePos.position.y && _topToBottom == false)
+            {
+                _leavingLadder = true;
+            }
         }
 
     }
