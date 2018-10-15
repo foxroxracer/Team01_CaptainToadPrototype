@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mechanic_SlidingDown : MonoBehaviour {
+ 
+
 
     private Vector3 CombinedRaycast = new Vector3();
     private Vector3 raycastFloorPos = new Vector3();
@@ -18,7 +20,7 @@ public class Mechanic_SlidingDown : MonoBehaviour {
 
         Debug.Log("Currently Triggering");
             //Stop player from moving normally and make him slide down the platform
-           // other.gameObject.GetComponent<CharacterControllerBehaviour>().CanMove = false;
+
         _charCTRL = other.gameObject.GetComponent<CharacterController>();
 
         SlopeMovement = new Vector3(_charCTRL.transform.position.x, FindFloorAverage().y, _charCTRL.transform.position.z);
