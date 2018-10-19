@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterControllerBehaviour : MonoBehaviour {
     public bool CanFall = true;
     public bool ClimbingLadder = false;
-    public bool LeavingLadder = false;
+
 
     public bool CanMove = true;
     public Transform CameraTransform;
