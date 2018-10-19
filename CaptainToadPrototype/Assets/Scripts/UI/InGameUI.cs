@@ -8,11 +8,13 @@ public class InGameUI : MonoBehaviour {
     public int CurrentCoins;
     public int CollectedGems;
 
+    public Sprite PowerGemSprite;
+
     public Sprite[] CoinSprites = new Sprite[10];
 
     private Image[] _coinImages = new Image[3];
-    private Image[] _LivesImages = new Image[3];
-
+    private Image[] _livesImages = new Image[3];
+    private Image[] _powerGemImages = new Image[3];
 
     private void Start()
     {
@@ -21,15 +23,21 @@ public class InGameUI : MonoBehaviour {
         _coinImages[1] = GameObject.Find("CurrentCoins_02").GetComponent<Image>();
         _coinImages[2] = GameObject.Find("CurrentCoins_03").GetComponent<Image>();
 
-        _LivesImages[0] = GameObject.Find("LivesCount_01").GetComponent<Image>();
-        _LivesImages[1] = GameObject.Find("LivesCount_02").GetComponent<Image>();
-        _LivesImages[2] = GameObject.Find("LivesCount_03").GetComponent<Image>();
+        _livesImages[0] = GameObject.Find("LivesCount_01").GetComponent<Image>();
+        _livesImages[1] = GameObject.Find("LivesCount_02").GetComponent<Image>();
+        _livesImages[2] = GameObject.Find("LivesCount_03").GetComponent<Image>();
+
+        _powerGemImages[0] = GameObject.Find("PowerGem_01").GetComponent<Image>();
+        _powerGemImages[1] = GameObject.Find("PowerGem_02").GetComponent<Image>();
+        _powerGemImages[2] = GameObject.Find("PowerGem_03").GetComponent<Image>();
     }
 
     private void Update()
     {
         UpdateUi(CurrentCoins,_coinImages);
-        UpdateUi(CurrentLives, _LivesImages);
+        UpdateUi(CurrentLives, _livesImages);
+
+
     }
 
     private void UpdateUi(int current,Image[] images)
@@ -55,6 +63,15 @@ public class InGameUI : MonoBehaviour {
         {
             images[i].sprite = CoinSprites[(int.Parse)(current.ToString().Substring(i, 1))];
 
+        }
+    }
+
+    public void UpdatePowerGems()
+    {
+        CollectedGems++;
+        for (int i = 0; i < CollectedGems; i++)
+        {
+            _powerGemImages[i].sprite = PowerGemSprite;
         }
     }
 }
