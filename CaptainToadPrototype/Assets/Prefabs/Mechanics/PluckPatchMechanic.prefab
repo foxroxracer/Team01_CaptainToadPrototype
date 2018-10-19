@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4546356911468742}
   - component: {fileID: 114887666865321944}
+  - component: {fileID: 65384911966687004}
   m_Layer: 0
   m_Name: PluckPatchMechanic
   m_TagString: Untagged
@@ -209,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791420367349866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16901684, y: 0.2527094, z: 0.5378909}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.35453996, y: 0.35453996, z: 0.35453996}
   m_Children:
   - {fileID: 4030069349257038}
@@ -238,7 +239,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339435248740728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1690168, y: 0.7472906, z: -4.537891}
+  m_LocalPosition: {x: 3.1690168, y: 1, z: -4.537891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4242736431910242}
@@ -536,6 +537,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1512647046894632}
   m_Mesh: {fileID: 4300004, guid: 8c7e53a04f1ae2044b2396dbb189b15d, type: 3}
+--- !u!65 &65384911966687004
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339435248740728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114887666865321944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -548,6 +561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _possiblePulls: 1
-  _droppedItem: {fileID: 0}
-  DeactivatedPluckPatch: {fileID: 2100000, guid: ce99536ee0d71084aa92ccfa51143b1d,
+  _droppedItem: {fileID: 1073085964487732, guid: ceb784525ea23c840bbd1f03b172fe69,
     type: 2}
+  DeactivatedMaterial: {fileID: 2100000, guid: ce99536ee0d71084aa92ccfa51143b1d, type: 2}
