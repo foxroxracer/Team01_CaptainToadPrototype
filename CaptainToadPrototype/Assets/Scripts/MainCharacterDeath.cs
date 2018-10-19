@@ -18,6 +18,10 @@ public class MainCharacterDeath : MonoBehaviour {
         StopMainCharacterMovement();
         DoMainCharacterDeathFX();
         Invoke("RestartLevel", 2f);
+
+
+        GameObject uiUpdate = GameObject.Find("UI_Update");
+        uiUpdate.GetComponent<InGameUI>().CurrentLives = uiUpdate.GetComponent<InGameUI>().CurrentLives - 1;
     }
 
     private void HideMainCharacter() {
