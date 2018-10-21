@@ -17,8 +17,6 @@ public class Mechanic_SlidingDown : MonoBehaviour {
     {
         if(other.gameObject.name == "MainCharacter")
         {
-
-        Debug.Log("Currently Triggering");
             //Stop player from moving normally and make him slide down the platform
 
         _charCTRL = other.gameObject.GetComponent<CharacterController>();
