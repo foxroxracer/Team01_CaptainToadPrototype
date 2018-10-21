@@ -54,6 +54,7 @@ MonoBehaviour:
   CurrentLives: 3
   CurrentCoins: 0
   CollectedGems: 0
+  PowerGemSprite: {fileID: 21300040, guid: dbcc625cf070a114b944b8e9544bdc86, type: 3}
   CoinSprites:
   - {fileID: 21300004, guid: dbcc625cf070a114b944b8e9544bdc86, type: 3}
   - {fileID: 21300006, guid: dbcc625cf070a114b944b8e9544bdc86, type: 3}
