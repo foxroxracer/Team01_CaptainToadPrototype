@@ -8381,7 +8381,7 @@ Prefab:
     - target: {fileID: 114873551677327096, guid: 0725d3ee96cf78f49aebc26a2a8c7968,
         type: 2}
       propertyPath: DistanceFromPivotPoint
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 20662758419387532, guid: 0725d3ee96cf78f49aebc26a2a8c7968,
         type: 2}
