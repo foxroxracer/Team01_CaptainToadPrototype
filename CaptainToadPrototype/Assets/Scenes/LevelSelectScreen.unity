@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 60758342}
+  m_FirstSelected: {fileID: 647056816}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &22326757
@@ -250,8 +250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 476.952, y: -114.25166}
-  m_SizeDelta: {x: 953.904, y: 228.50333}
+  m_AnchoredPosition: {x: 476.83005, y: -114.25166}
+  m_SizeDelta: {x: 953.6601, y: 228.50333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60758344
 MonoBehaviour:
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 60758345}
   m_OnClick:
     m_PersistentCalls:
@@ -585,8 +585,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 476.952, y: -362.755}
-  m_SizeDelta: {x: 953.904, y: 228.50333}
+  m_AnchoredPosition: {x: 476.83005, y: -362.755}
+  m_SizeDelta: {x: 953.6601, y: 228.50333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647056818
 MonoBehaviour:
@@ -1520,8 +1520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 476.952, y: -611.2583}
-  m_SizeDelta: {x: 953.904, y: 228.50333}
+  m_AnchoredPosition: {x: 476.83005, y: -611.2583}
+  m_SizeDelta: {x: 953.6601, y: 228.50333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123867085
 MonoBehaviour:
